@@ -10,8 +10,8 @@ Siddhika,
 From Bengal to Nepal,
 distance tried to test us…
 
-But love like ours?
-It doesn't break.
+But love like ours,
+it doesn’t break.
 
 It only grows stronger.
 
@@ -19,30 +19,27 @@ You are my peace,
 my madness,
 my forever.
 
-In every universe,
-I will still find you.
+In every life,
+I will always choose you.
 
 – Sayantan ❤️
 `;
 
 let i = 0;
 
-/* UNIVERSAL TAP FIX */
 function startExperience() {
   startScreen.style.display = "none";
   mainContent.classList.remove("hidden");
 
-  /* PLAY MUSIC (mobile safe) */
   music.play().catch(() => {});
 
   typeWriter();
 }
 
-/* BOTH CLICK + TOUCH */
+/* MOBILE + DESKTOP TAP FIX */
 document.body.addEventListener("click", startExperience, { once: true });
 document.body.addEventListener("touchstart", startExperience, { once: true });
 
-/* TYPEWRITER */
 function typeWriter() {
   if (i < message.length) {
     textEl.innerHTML += message.charAt(i);
@@ -51,16 +48,20 @@ function typeWriter() {
   }
 }
 
-/* HEART ANIMATION (OPTIMIZED) */
+/* HEART ANIMATION */
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
 
 let hearts = [];
 
-for (let i = 0; i < 40; i++) {
+for (let i = 0; i < 35; i++) {
   hearts.push({
     x: Math.random() * canvas.width,
     y: Math.random() * canvas.height,
