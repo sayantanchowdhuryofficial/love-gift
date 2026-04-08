@@ -3,31 +3,46 @@
 <head>
 <meta charset="UTF-8">
 <title>For Siddhika ❤️</title>
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- FONTS -->
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
-
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <audio id="music" loop>
-  <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_115b9b3c2e.mp3" type="audio/mpeg">
+  <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_115b9b3c2e.mp3">
 </audio>
 
-<!-- START SCREEN -->
-<div id="startScreen">
+<!-- PASSWORD SCREEN -->
+<div id="lockScreen">
+  <h2>Enter Secret 💖</h2>
+  <input type="password" id="password" placeholder="Hint: her name ❤️">
+  <button onclick="checkPassword()">Unlock</button>
+  <p id="error"></p>
+</div>
+
+<!-- CINEMATIC INTRO -->
+<div id="intro" class="hidden">
   <h1>Sayantan ❤️ Siddhika</h1>
-  <p>Tap anywhere…</p>
+  <p>Tap to begin...</p>
 </div>
 
 <!-- MAIN CONTENT -->
-<div id="mainContent" class="hidden">
+<div id="main" class="hidden">
+
   <h2 class="loveText">For You 💖</h2>
   <p id="typeText"></p>
+
+  <!-- QUOTES -->
+  <p id="quotes"></p>
+
+  <!-- GAME -->
+  <div id="game">
+    <p>Catch hearts 💕 Score: <span id="score">0</span></p>
+  </div>
+
 </div>
 
 <canvas id="canvas"></canvas>
