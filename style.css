@@ -6,54 +6,70 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  height: 100vh;
   overflow: hidden;
   color: white;
 }
 
-/* CENTER BOX */
-.container {
+/* BACKGROUND ANIMATION */
+body {
+  background: linear-gradient(-45deg, #ff758c, #ff7eb3, #6a11cb, #2575fc);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+}
+
+@keyframes gradient {
+  0% {background-position: 0%;}
+  50% {background-position: 100%;}
+  100% {background-position: 0%;}
+}
+
+/* START SCREEN */
+#startScreen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Great Vibes', cursive;
+  text-align: center;
+}
+
+#startScreen h1 {
+  font-size: 40px;
+}
+
+#startScreen p {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+/* MAIN CONTENT */
+#mainContent {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  
   text-align: center;
-  padding: 25px;
-  width: 90%;
-  max-width: 350px;
-
-  background: rgba(255,255,255,0.15);
-  backdrop-filter: blur(12px);
-  border-radius: 20px;
+  width: 85%;
+  max-width: 400px;
 }
 
-/* TEXT */
-h1 {
-  font-size: 24px;
+.hidden {
+  display: none;
 }
 
-.subtitle {
-  font-size: 14px;
-  margin: 10px 0 20px;
+.loveText {
+  font-family: 'Great Vibes', cursive;
+  font-size: 32px;
+  margin-bottom: 20px;
 }
 
-/* BUTTON */
-button {
-  padding: 12px 20px;
-  border: none;
-  border-radius: 25px;
-  background: #ff4d6d;
-  color: white;
+#typeText {
   font-size: 16px;
-  cursor: pointer;
-}
-
-/* MESSAGE */
-#messageBox {
-  margin-top: 20px;
-  font-size: 14px;
-  min-height: 60px;
+  line-height: 1.6;
 }
 
 /* CANVAS */
