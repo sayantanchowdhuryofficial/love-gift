@@ -1,29 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>For Siddhika ❤️</title>
+<meta charset="UTF-8">
+<title>For Siddhika ❤️</title>
 
-  <!-- MOBILE FIX -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="style.css">
+<!-- BEAUTIFUL FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="container">
+<!-- MUSIC (tap will start it) -->
+<audio id="music" loop>
+  <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_115b9b3c2e.mp3" type="audio/mpeg">
+</audio>
+
+<!-- FIRST SCREEN -->
+<div id="startScreen">
   <h1>Sayantan ❤️ Siddhika</h1>
-  <p class="subtitle">From Bengal to Nepal… forever us 🌍💖</p>
-
-  <button id="loveBtn">Tap Here ❤️</button>
-
-  <div id="messageBox">
-    <p id="typeText"></p>
-  </div>
+  <p>Tap anywhere…</p>
 </div>
 
-<canvas id="bg"></canvas>
+<!-- MAIN EXPERIENCE -->
+<div id="mainContent" class="hidden">
+  <h2 class="loveText">For You 💖</h2>
+  <p id="typeText"></p>
+</div>
+
+<canvas id="canvas"></canvas>
 
 <script src="script.js"></script>
 </body>
