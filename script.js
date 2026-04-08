@@ -1,47 +1,58 @@
-const btn = document.getElementById("loveBtn");
+const startScreen = document.getElementById("startScreen");
+const mainContent = document.getElementById("mainContent");
 const textEl = document.getElementById("typeText");
+const music = document.getElementById("music");
 
 const message = `
+
 Siddhika,
 
-From the streets of Bengal to the hills of Nepal,
-our story was never supposed to be easy…
+From Bengal to Nepal,
+distance tried to test us…
 
-But still, I choose you.
-In every life, in every world.
+But love like ours?
+It doesn't break.
+
+It only grows stronger.
 
 You are my peace,
-my chaos,
+my madness,
 my forever.
+
+In every universe,
+I will still find you.
 
 – Sayantan ❤️
 `;
 
 let i = 0;
-let started = false;
 
-/* TAP FIX (WORKS ON MOBILE) */
-btn.addEventListener("click", startLove);
-btn.addEventListener("touchstart", startLove);
+/* UNIVERSAL TAP FIX */
+function startExperience() {
+  startScreen.style.display = "none";
+  mainContent.classList.remove("hidden");
 
-function startLove() {
-  if (started) return;
-  started = true;
-  btn.style.display = "none";
+  /* PLAY MUSIC (mobile safe) */
+  music.play().catch(() => {});
+
   typeWriter();
 }
 
-/* TYPEWRITER EFFECT */
+/* BOTH CLICK + TOUCH */
+document.body.addEventListener("click", startExperience, { once: true });
+document.body.addEventListener("touchstart", startExperience, { once: true });
+
+/* TYPEWRITER */
 function typeWriter() {
   if (i < message.length) {
     textEl.innerHTML += message.charAt(i);
     i++;
-    setTimeout(typeWriter, 40);
+    setTimeout(typeWriter, 35);
   }
 }
 
-/* FLOATING HEARTS (LIGHTWEIGHT) */
-const canvas = document.getElementById("bg");
+/* HEART ANIMATION (OPTIMIZED) */
+const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
 canvas.width = window.innerWidth;
@@ -49,12 +60,12 @@ canvas.height = window.innerHeight;
 
 let hearts = [];
 
-for (let i = 0; i < 30; i++) {
+for (let i = 0; i < 40; i++) {
   hearts.push({
     x: Math.random() * canvas.width,
     y: Math.random() * canvas.height,
-    size: Math.random() * 4 + 2,
-    speed: Math.random() * 1 + 0.3
+    size: Math.random() * 3 + 2,
+    speed: Math.random() * 0.8 + 0.2
   });
 }
 
@@ -65,7 +76,7 @@ function drawHeart(x, y, s) {
   ctx.bezierCurveTo(x - s, y + s, x, y + s * 1.5, x, y + s * 2);
   ctx.bezierCurveTo(x, y + s * 1.5, x + s, y + s, x + s, y);
   ctx.bezierCurveTo(x + s, y - s, x, y - s, x, y);
-  ctx.fillStyle = "rgba(255,255,255,0.5)";
+  ctx.fillStyle = "rgba(255,255,255,0.6)";
   ctx.fill();
 }
 
