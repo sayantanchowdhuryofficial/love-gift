@@ -6,68 +6,61 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  height: 100vh;
-  overflow: hidden;
   color: white;
+  overflow: hidden;
 
   background: linear-gradient(-45deg, #ff758c, #ff7eb3, #6a11cb, #2575fc);
   background-size: 400% 400%;
-  animation: gradient 10s ease infinite;
+  animation: bg 10s infinite;
 }
 
-@keyframes gradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-#startScreen {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  text-align: center;
-  font-family: 'Great Vibes', cursive;
-}
-
-#startScreen h1 {
-  font-size: 40px;
-}
-
-#startScreen p {
-  font-size: 18px;
-  margin-top: 10px;
-}
-
-#mainContent {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  
-  text-align: center;
-  width: 85%;
-  max-width: 400px;
+@keyframes bg {
+  0% {background-position:0%;}
+  50% {background-position:100%;}
+  100% {background-position:0%;}
 }
 
 .hidden {
   display: none;
 }
 
-.loveText {
-  font-family: 'Great Vibes', cursive;
-  font-size: 32px;
-  margin-bottom: 20px;
+#lockScreen, #intro, #main {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
 }
 
-#typeText {
-  font-size: 16px;
-  line-height: 1.6;
+input {
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  background: #ff4d6d;
+  color: white;
+}
+
+.loveText {
+  font-family: 'Great Vibes';
+  font-size: 30px;
+}
+
+#quotes {
+  margin-top: 15px;
+  font-style: italic;
+}
+
+#game {
+  margin-top: 20px;
 }
 
 canvas {
